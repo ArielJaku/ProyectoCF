@@ -1,0 +1,26 @@
+.ficha {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.ficha img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.ficha h2 {
+  margin-bottom: 10px;
+}
+.ficha p {
+  margin: 5px 0;
+}
+.ficha a {
+  color: #0077b5;
+  text-decoration: none;
+}
