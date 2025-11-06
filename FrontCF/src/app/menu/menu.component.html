@@ -1,0 +1,11 @@
+<div class="menu-container">
+  <button (click)="abrirMenu()">☰ Menú</button>
+
+  <nav *ngIf="abierto" class="menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Productos</a></li>
+      <li><a href="#">Acerca De</a></li>
+    </ul>
+  </nav>
+</div>
