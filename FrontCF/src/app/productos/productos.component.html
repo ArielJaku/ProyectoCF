@@ -1,0 +1,29 @@
+<button mat-raised-button color="primary" (click)="abrirModalProducto()">
+  Agregar Producto
+</button>
+<table class="tabla-centrada table table-bordered">
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Título</th>
+      <th>Categoría</th>
+      <th>Precio</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productos">
+      <td>
+        <img [src]="product.thumbnail" alt="thumbnail" width="80" height="80">
+      </td>
+      <td>{{ product.title }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.price | currency:'USD' }}</td>
+      <td>
+          <a [routerLink]="['/productos', product.id]">Ver más</a>
+          <button (click)="abrirModalUpdate(product)">Editar</button>
+      </td>
+      
+    </tr>
+  </tbody>
+</table>
