@@ -1,6 +1,8 @@
-<button mat-raised-button color="primary" (click)="abrirModalProducto()">
+<div style="text-align: center;">
+<button class="botonProducto" (click)="abrirModalProducto()">
   Agregar Producto
-</button>
+</button></div>
+<div>
 <table class="tabla-centrada table table-bordered">
   <thead>
     <tr>
@@ -21,9 +23,11 @@
       <td>{{ product.price | currency:'USD' }}</td>
       <td>
           <a [routerLink]="['/productos', product.id]">Ver más</a>
-          <button (click)="abrirModalUpdate(product)">Editar</button>
+          <button class="botonEdit" (click)="abrirModalUpdate(product)">Editar</button>
+          <button class="botonElimin" (click)="EliminarFake(product)">Eliminar</button>
       </td>
       
     </tr>
   </tbody>
 </table>
+</div>

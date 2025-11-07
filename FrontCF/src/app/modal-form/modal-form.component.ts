@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Producto } from '../interfaces/producto';
 import { Inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, FormArray, FormControl,ReactiveFormsModule  } from '@angular/forms';
 import { RepositorioProductosService } from '../servicios/repositorio-productos.service';
@@ -9,7 +10,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-modal-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './modal-form.component.html',
   styleUrl: './modal-form.component.css'
 })
@@ -52,9 +53,9 @@ export class ModalFormComponent {
     if (this.productoForm.valid) {
       const producto: Producto = this.productoForm.value;
       if(this.esUpdate){
-          this.postService.updatePost(producto).subscribe();
+          this.postService.updatePost(producto)
       }else{
-          this.postService.createPost(producto).subscribe();
+          this.postService.createPost(producto)
       } 
     }
   }

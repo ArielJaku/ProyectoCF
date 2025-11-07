@@ -17,11 +17,24 @@ export class RepositorioProductosService {
   return this.http.get(this.apiURL+"/products/" + id);
   }
 
-  createPost(data: Producto): Observable<any>{
-    return this.http.post(this.apiURL+"/products", data);
+  createPost(data: Producto): void{
+    let jsonString: string = JSON.stringify(data);
+    fetch('https://dummyjson.com/products/add', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: jsonString
+  })
+  .then(res => res.json())
   }
 
-  updatePost(data: Producto): Observable<any>{
-  return this.http.put(this.apiURL+"/products/", data);
-  }
+  updatePost(data: Producto): void{
+    fetch('https://dummyjson.com/products/'+ data.id, {
+      method: 'PUT', 
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: data.title
+      })
+    })
+    .then(res => res.json())
+    }
 }

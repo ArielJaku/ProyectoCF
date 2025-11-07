@@ -1,0 +1,11 @@
+.customLayout{
+    display: flex
+}
+
+.prueba1{
+    width: 50px;
+}
+
+.prueba2{
+    flex-grow: 1;
+}

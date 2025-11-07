@@ -34,8 +34,7 @@ export class ProductosComponent {
       maxHeight: '90vh', 
       autoFocus: false,  
       disableClose: true 
-    });
-  }
+    });}
 
   abrirModalUpdate(producto: Producto): void {
   const dialogRef = this.dialog.open(ModalFormComponent, {
@@ -44,8 +43,12 @@ export class ProductosComponent {
     maxHeight: '90vh', 
     autoFocus: false, 
     disableClose: true
-  });
-}
+  });}
+
+  EliminarFake(producto: Producto): void {
+      this.productos = this.productos.filter(x => x.id !== producto.id);
+      console.log(this.productos)
+  }
 
       
 }   
